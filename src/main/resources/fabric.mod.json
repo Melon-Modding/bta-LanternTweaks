@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "lanterntweaks",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This mod aims to help new BTA modders.",
+  "name": "Lantern Tweaks",
+  "description": "Make firefly lanterns better.",
   "authors": [
-    "Turnip Labs"
+    "Melon Modding"
   ],
   "contact": {
     "homepage": "",
@@ -19,20 +19,11 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-			"turniplabs.examplemod.ExampleMod"
-    ],
-		"beforeGameStart": [
-			"turniplabs.examplemod.ExampleMod"
-		],
-		"afterGameStart": [
-			"turniplabs.examplemod.ExampleMod"
-		],
-		"recipesReady": [
-			"turniplabs.examplemod.ExampleMod"
-		]
+			"melonmodding.lanterntweaks.LanternTweaks"
+    ]
 	},
   "mixins": [
-      "examplemod.mixins.json"
+		"lanterntweaks.mixins.json"
   ],
 
   "depends": {
