@@ -43,6 +43,7 @@ public abstract class BlockLanternFireflyMixin extends Block{
 		if(checkBlockHanging(world, block, x, y, z)) {
 			world.setBlockMetadataWithNotify(x, y, z, 1);
 			ci.cancel();
+			return;
 		}
 
 		if(checkBlockGrounded(world, block, x, y, z)) {
@@ -56,6 +57,7 @@ public abstract class BlockLanternFireflyMixin extends Block{
 		Block block = Block.blocksList[world.getBlockId(x, y + 1, z)];
 		if(checkBlockHanging(world, block, x, y, z)) {
 			cir.setReturnValue(true);
+			return;
 		}
 
 		block = Block.blocksList[world.getBlockId(x, y-1, z)];
@@ -127,7 +129,7 @@ public abstract class BlockLanternFireflyMixin extends Block{
 		}
 
 		int meta = world.getBlockMetadata(x, y + 1, z);
-		return meta == 0 || meta == 1 || meta == 8 || meta == 9;
+		return (meta >= 0 && meta <= 5) || (meta >= 8 && meta <= 13);
 	}
 
 	@Unique
